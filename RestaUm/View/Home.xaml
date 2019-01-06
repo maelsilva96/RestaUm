@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="RestaUm.View.Home">
+    <ContentPage.Content>
+        <StackLayout 
+            x:Name="_Layout"
+            BackgroundColor="#ffffff"
+            HorizontalOptions="FillAndExpand" 
+            VerticalOptions="FillAndExpand"
+        >
+            <Label Text="RestaUm"
+                   TextColor="Black"
+                   FontSize="25"
+                   FontAttributes="Bold"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="FillAndExpand"
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center"
+                   />
+            <Label Text="{Binding Teste}"
+                   TextColor="Black"
+                   FontSize="25"
+                   FontAttributes="Bold"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="FillAndExpand"
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center"
+                   />
+            <Button
+                Margin="20,0,20,0"
+                Text="Iniciar Jogo"
+                TextColor="White"
+                BorderColor="Transparent"
+                BackgroundColor="Black"
+                Command="{Binding StartGame}"
+            />
+            <StackLayout
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                >
+                <Label Text="@maelsilva96" 
+                       TextColor="Black"
+                   HorizontalOptions="FillAndExpand" 
+                   VerticalOptions="FillAndExpand"
+                       VerticalTextAlignment="End"
+                       HorizontalTextAlignment="End"
+                       Margin="0,0,20,10"
+                   />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

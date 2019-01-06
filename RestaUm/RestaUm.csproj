@@ -16,5 +16,11 @@
     <Folder Include="Model\" />
     <Folder Include="View\" />
     <Folder Include="ViewModel\" />
+    <Folder Include="Stock\" />
+    <Folder Include="Business\" />
+    <Folder Include="Enum\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="MainPage.xaml.cs" />
   </ItemGroup>
 </Project>

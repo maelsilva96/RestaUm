@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using RestaUm.View;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace RestaUm
@@ -11,7 +12,7 @@ namespace RestaUm
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new Home();
         }
 
         protected override void OnStart()

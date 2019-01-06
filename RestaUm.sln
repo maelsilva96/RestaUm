@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaUm.iOS", "RestaUm.iOS\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaUm", "RestaUm\RestaUm.csproj", "{5CBF4977-2125-4C88-B8EE-2BB69CE463E6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaUm.Test", "RestaUm.Test\RestaUm.Test.csproj", "{676864C8-78F3-41C0-BCC4-670D26032970}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,5 +69,21 @@ Global
 		{5CBF4977-2125-4C88-B8EE-2BB69CE463E6}.Ad-Hoc|iPhone.Build.0 = Debug|Any CPU
 		{5CBF4977-2125-4C88-B8EE-2BB69CE463E6}.AppStore|iPhone.ActiveCfg = Debug|Any CPU
 		{5CBF4977-2125-4C88-B8EE-2BB69CE463E6}.AppStore|iPhone.Build.0 = Debug|Any CPU
+		{676864C8-78F3-41C0-BCC4-670D26032970}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{676864C8-78F3-41C0-BCC4-670D26032970}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{676864C8-78F3-41C0-BCC4-670D26032970}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{676864C8-78F3-41C0-BCC4-670D26032970}.Release|Any CPU.Build.0 = Release|Any CPU
+		{676864C8-78F3-41C0-BCC4-670D26032970}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{676864C8-78F3-41C0-BCC4-670D26032970}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{676864C8-78F3-41C0-BCC4-670D26032970}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{676864C8-78F3-41C0-BCC4-670D26032970}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{676864C8-78F3-41C0-BCC4-670D26032970}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{676864C8-78F3-41C0-BCC4-670D26032970}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{676864C8-78F3-41C0-BCC4-670D26032970}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{676864C8-78F3-41C0-BCC4-670D26032970}.Release|iPhone.Build.0 = Release|Any CPU
+		{676864C8-78F3-41C0-BCC4-670D26032970}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
+		{676864C8-78F3-41C0-BCC4-670D26032970}.Ad-Hoc|iPhone.Build.0 = Release|Any CPU
+		{676864C8-78F3-41C0-BCC4-670D26032970}.AppStore|iPhone.ActiveCfg = Release|Any CPU
+		{676864C8-78F3-41C0-BCC4-670D26032970}.AppStore|iPhone.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
