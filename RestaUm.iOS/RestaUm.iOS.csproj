@@ -157,4 +157,12 @@
       <Name>RestaUm</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ball%401x.png" />
+    <BundleResource Include="Resources\ball%402x.png" />
+    <BundleResource Include="Resources\ball%403x.png" />
+    <BundleResource Include="Resources\ball_golf%401x.png" />
+    <BundleResource Include="Resources\ball_golf%402x.png" />
+    <BundleResource Include="Resources\ball_golf%403x.png" />
+  </ItemGroup>
 </Project>

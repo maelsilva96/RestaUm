@@ -83,6 +83,18 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ball.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ball.png" />
+    <AndroidResource Include="Resources\mipmap-ldpi\ball.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ball.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ball.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ball.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ball_golf.png" />
+    <AndroidResource Include="Resources\mipmap-ldpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ball_golf.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ball_golf.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ball_golf.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ball_golf.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
@@ -90,6 +102,7 @@
     <Folder Include="Resources\drawable-xhdpi\" />
     <Folder Include="Resources\drawable-xxhdpi\" />
     <Folder Include="Resources\drawable-xxxhdpi\" />
+    <Folder Include="Resources\mipmap-ldpi\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RestaUm\RestaUm.csproj">

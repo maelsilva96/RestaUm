@@ -1,34 +1,18 @@
 ﻿<Properties StartupConfiguration="{AABE7D86-AFD0-42B0-A571-6DFD4DB96AB5}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="RestaUm/View/Board.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="RestaUm/ViewModel/BoardViewModel.cs">
     <Files>
-      <File FileName="RestaUm/ViewModel/BoardViewModel.cs" Line="21" Column="10" />
-      <File FileName="RestaUm/View/Board.xaml" Line="12" Column="37" />
-      <File FileName="RestaUm/View/Board.xaml.cs" Line="15" Column="10" />
+      <File FileName="RestaUm/View/Board.xaml.cs" Line="23" Column="64" />
+      <File FileName="RestaUm/ViewModel/BoardViewModel.cs" Line="84" Column="13" />
+      <File FileName="RestaUm/View/Board.xaml" Line="18" Column="1" />
+      <File FileName="RestaUm/Ultil/NumberUtil.cs" Line="7" Column="43" />
     </Files>
-    <Pads>
-      <Pad Id="MonoDevelop.UnitTesting.TestPad">
-        <State name="__root__">
-          <Node name="RestaUm" expanded="True" selected="True">
-            <Node name="RestaUm.Test" expanded="True">
-              <Node name="RestaUm" expanded="True">
-                <Node name="Test" expanded="True">
-                  <Node name="Board" expanded="True">
-                    <Node name="BoardTest" expanded="True" />
-                  </Node>
-                </Node>
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.RestaUm.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.440A6BD9-B13A-4551-AB14-47B0E97C1096" />
+  <MonoDevelop.Ide.ItemProperties.RestaUm.Android AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.RestaUm.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.440A6BD9-B13A-4551-AB14-47B0E97C1096" />
-  <MonoDevelop.Ide.ItemProperties.RestaUm.Android PreferredExecutionTarget="Android.Android_Accelerated_Oreo" AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" />
   <MultiItemStartupConfigurations />
 </Properties>

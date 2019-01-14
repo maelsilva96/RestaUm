@@ -10,7 +10,7 @@
                 HorizontalOptions="FillAndExpand"
                 VerticalOptions="FillAndExpand"
                 >
-                <Grid x:Name="_GridBoard" />
+                <Grid x:Name="_GridBoard"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

@@ -19,6 +19,7 @@
     <Folder Include="Stock\" />
     <Folder Include="Business\" />
     <Folder Include="Enum\" />
+    <Folder Include="Ultil\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="MainPage.xaml.cs" />

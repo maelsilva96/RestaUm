@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using RestaUm.ViewModel;
+﻿using RestaUm.ViewModel;
 
 using Xamarin.Forms;
 
@@ -8,14 +6,16 @@ namespace RestaUm.View
 {
     public partial class Board : ContentPage
     {
+        private BoardViewModel _boardViewModel;
         public Board()
         {
             InitializeComponent();
-            BindingContext = new BoardViewModel();
+            this._boardViewModel = new BoardViewModel(_GridBoard);
+            BindingContext = this._boardViewModel;
             this.GerateGrid();
         }
 
-        private void GerateGrid () 
+        private void GerateGrid()
         {
             _GridBoard = new Grid
             {
@@ -40,6 +40,7 @@ namespace RestaUm.View
                     new ColumnDefinition { Width = GridLength.Auto }
                 }
             };
+            this._boardViewModel.GerateBoard();
         }
     }
 }

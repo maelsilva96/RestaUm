@@ -48,6 +48,9 @@
 /Users/ismaelsilva/Projetos/RestaUm/RestaUm.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone8.4-12.1/actool/_BundleResourceWithLogicalName.items
 /Users/ismaelsilva/Projetos/RestaUm/RestaUm.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone8.4-12.1/coremlc/_PartialAppManifest.items
 /Users/ismaelsilva/Projetos/RestaUm/RestaUm.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone8.4-12.1/coremlc/_BundleResourceWithLogicalName.items
+/Users/ismaelsilva/Projetos/RestaUm/RestaUm.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone8.4-12.1/optimized/ball@1x.png
+/Users/ismaelsilva/Projetos/RestaUm/RestaUm.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone8.4-12.1/optimized/ball@2x.png
+/Users/ismaelsilva/Projetos/RestaUm/RestaUm.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone8.4-12.1/optimized/ball@3x.png
 /Users/ismaelsilva/Projetos/RestaUm/RestaUm.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone8.4-12.1/optimized/
 /Users/ismaelsilva/Projetos/RestaUm/RestaUm.iOS/obj/iPhoneSimulator/Debug/RestaUm.iOS.csprojAssemblyReference.cache
 /Users/ismaelsilva/Projetos/RestaUm/RestaUm.iOS/obj/iPhoneSimulator/Debug/RestaUm.iOS.csproj.CoreCompileInputs.cache
@@ -55,3 +58,6 @@
 /Users/ismaelsilva/Projetos/RestaUm/RestaUm.iOS/obj/iPhoneSimulator/Debug/RestaUm.iOS.csproj.CopyComplete
 /Users/ismaelsilva/Projetos/RestaUm/RestaUm.iOS/obj/iPhoneSimulator/Debug/RestaUm.iOS.exe
 /Users/ismaelsilva/Projetos/RestaUm/RestaUm.iOS/obj/iPhoneSimulator/Debug/RestaUm.iOS.pdb
+/Users/ismaelsilva/Projetos/RestaUm/RestaUm.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone8.4-12.1/optimized/ball_golf@1x.png
+/Users/ismaelsilva/Projetos/RestaUm/RestaUm.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone8.4-12.1/optimized/ball_golf@2x.png
+/Users/ismaelsilva/Projetos/RestaUm/RestaUm.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone8.4-12.1/optimized/ball_golf@3x.png
