@@ -1,52 +1,59 @@
 ﻿using System.ComponentModel;
 using RestaUm.Model;
-using RestaUm.Business;
 using Xamarin.Forms;
 using System.Collections.Generic;
 using RestaUm.Ultil;
+using System.Linq;
 
 namespace RestaUm.ViewModel
 {
     public class BoardViewModel : INotifyPropertyChanged
     {
-        private int roundProperty;
         private Grid _grid { get; set; }
         private Piece PieceSelect { get; set; }
 
+        private int roundProperty;
         public int Round { get { return roundProperty; } private set { roundProperty = value; OnPropertyChanged("Round"); } }
-        private Board Board { get; set; }
-        private readonly BoardBusiness _boardBusiness;
 
-        public Command CommandPiece;
-        public Command CommandClearPiece;
+        private int piecesInGame;
+        public int PiecesInGame { get { return piecesInGame; } private set { piecesInGame = value; OnPropertyChanged("PiecesInGame"); } }
+
+        private Board Board { get; set; }
+        private bool PossibleMovement { get; set; } = true;
+
+        public Command CommandPiece { get; set; }
+        public Command CommandClearPiece { get; set; }
+        public Command CommandReturnHome { get; set; }
 
         public BoardViewModel(Grid grid)
         {
             this._grid = grid;
             this.Round = Stock.StockContext.Round;
             this.Board = Stock.StockContext.Board;
-            this._boardBusiness = new BoardBusiness(this.Board);
             this.CommandPiece = new Command((list) => this.SelectPiece((List<int>)list));
             this.CommandClearPiece = new Command((list) => this.ClearPiece((List<int>)list));
-
+            this.CommandReturnHome = new Command(this.ReturnHome);
         }
 
         public void GerateBoard()
         {
             this._grid.Children.Clear();
-            for (int x = 0; x < this.Board.SizeX; x++)
+            for (int x = 0; x < this.Board.Pieces.GetLength(0); x++)
             {
-                for (int y = 0; y < this.Board.SizeY; y++)
+                for (int y = 0; y < this.Board.Pieces.GetLength(1); y++)
                 {
+                    this.PlayAvailable(x, y);
                     this._grid.Children.Add(
                         this.GetButton(this.Board.Pieces[x, y])
                         , x, y
                     );
                 }
             }
+            this.FinishGame();
         }
 
-        public void ClearPiece(List<int> list) {
+        public void ClearPiece(List<int> list)
+        {
             this.PieceSelect = null;
             this.Board.Pieces[list[0], list[1]].StatusPiece = Enum.StatusPiece.Activo;
             this.GerateBoard();
@@ -55,16 +62,76 @@ namespace RestaUm.ViewModel
         public void SelectPiece(List<int> list)
         {
             var piece = this.Board.Pieces[list[0], list[1]];
-            if (this.PieceSelect != null) {
-                if(piece.StatusPiece == Enum.StatusPiece.Livre) {
-                    this.MoveToPieceIsValid(piece);
-                } else {
-                    Application.Current.MainPage.DisplayAlert("Ops", "Movimento invalido!", "Ok");
-                }
-            } else {
+            if (this.PieceSelect != null)
+            {
+                if (piece.StatusPiece == Enum.StatusPiece.Livre) this.MoveToPieceIsValid(piece);
+                else Application.Current.MainPage.DisplayAlert("Ops", "Movimento invalido!", "Ok");
+            }
+            else
+            {
                 this.SelectPice(piece);
             }
             this.GerateBoard();
+        }
+
+        private void FinishGame () {
+            if(!this.PossibleMovement) {
+                Stock.StockContext.Records.Add(new Record()
+                {
+                    NumPieces = this.PiecesInGame,
+                    NumPlays = this.Round
+                });
+                Application.Current.MainPage = new View.FinishGame();
+            }
+        }
+
+        private void ReturnHome()
+        {
+            Application.Current.MainPage = new View.Home();
+        }
+
+        private void PlayAvailable(int x, int y)
+        {
+            if (x == 0 && y == 0)
+            {
+                this.PiecesInGame = 0;
+                this.PossibleMovement = false;
+            }
+
+            if (
+                this.Board.Pieces[x, y].StatusPiece == Enum.StatusPiece.Activo ||
+                this.Board.Pieces[x, y].StatusPiece == Enum.StatusPiece.Checked
+            )
+            {
+                this.PiecesInGame++;
+                if (x > 1 && !this.PossibleMovement) this.PossibleMovement = this.PieceXValid(x, y, false);
+                if (x < 5 && !this.PossibleMovement) this.PossibleMovement = this.PieceXValid(x, y, true);
+
+                if (y > 1 && !this.PossibleMovement) this.PossibleMovement = this.PieceYValid(x, y, false);
+                if (y < 5 && !this.PossibleMovement) this.PossibleMovement = this.PieceYValid(x, y, true);
+            }
+        }
+
+        private bool PieceXValid(int x, int y, bool someValue)
+        {
+            var p = this.Board.Pieces;
+            return someValue
+                ? (p[(x + 1), y].StatusPiece == Enum.StatusPiece.Checked) && (p[(x + 2), y].StatusPiece == Enum.StatusPiece.Checked) ||
+                    (p[(x + 1), y].StatusPiece == Enum.StatusPiece.Activo) && (p[(x + 2), y].StatusPiece == Enum.StatusPiece.Livre)
+                    : 
+                (p[(x - 1), y].StatusPiece == Enum.StatusPiece.Checked) && (p[(x - 2), y].StatusPiece == Enum.StatusPiece.Checked) ||
+                    (p[(x - 1), y].StatusPiece == Enum.StatusPiece.Activo) && (p[(x - 2), y].StatusPiece == Enum.StatusPiece.Livre);
+        }
+
+        private bool PieceYValid(int x, int y, bool someValue)
+        {
+            var p = this.Board.Pieces;
+            return someValue
+                ? (p[x, (y + 1)].StatusPiece == Enum.StatusPiece.Checked) && (p[x, (y + 2)].StatusPiece == Enum.StatusPiece.Checked) ||
+                    (p[x, (y + 1)].StatusPiece == Enum.StatusPiece.Activo) && (p[x, (y + 2)].StatusPiece == Enum.StatusPiece.Livre)
+                    : 
+                (p[x, (y - 1)].StatusPiece == Enum.StatusPiece.Checked) && (p[x, (y - 2)].StatusPiece == Enum.StatusPiece.Checked) ||
+                    (p[x, (y - 1)].StatusPiece == Enum.StatusPiece.Activo) && (p[x, (y - 2)].StatusPiece == Enum.StatusPiece.Livre);
         }
 
         private void SelectPice(Piece piece)
@@ -80,20 +147,25 @@ namespace RestaUm.ViewModel
             }
         }
 
-        private void MoveToPieceIsValid (Piece piece) {
-            if(NumberUtil.Diff(piece.LocationX, this.PieceSelect.LocationX) == 2)
+        private void MoveToPieceIsValid(Piece piece)
+        {
+            if (NumberUtil.Diff(piece.LocationX, this.PieceSelect.LocationX) == 2)
             {
                 this.MovePieceInX(piece);
-            } else if(NumberUtil.Diff(piece.LocationY, this.PieceSelect.LocationY) == 2)
+                this.Round += 1;
+            }
+            else if (NumberUtil.Diff(piece.LocationY, this.PieceSelect.LocationY) == 2)
             {
                 this.MovePieceInY(piece);
-            } else
+                this.Round += 1;
+            }
+            else
             {
                 Application.Current.MainPage.DisplayAlert("Ops", "Movimento invalido!", "Ok");
             }
         }
 
-        private void MovePieceInY (Piece piece)
+        private void MovePieceInY(Piece piece)
         {
             piece.StatusPiece = Enum.StatusPiece.Activo;
             if (piece.LocationY < this.PieceSelect.LocationY)
@@ -101,7 +173,8 @@ namespace RestaUm.ViewModel
                 this.Board.Pieces[
                     this.PieceSelect.LocationX, (this.PieceSelect.LocationY - 1)
                 ].StatusPiece = Enum.StatusPiece.Livre;
-            } else
+            }
+            else
             {
                 this.Board.Pieces[
                     this.PieceSelect.LocationX, (this.PieceSelect.LocationY + 1)
@@ -113,14 +186,16 @@ namespace RestaUm.ViewModel
             this.PieceSelect = null;
         }
 
-        private void MovePieceInX (Piece piece) {
+        private void MovePieceInX(Piece piece)
+        {
             piece.StatusPiece = Enum.StatusPiece.Activo;
-            if(piece.LocationX < this.PieceSelect.LocationX)
+            if (piece.LocationX < this.PieceSelect.LocationX)
             {
                 this.Board.Pieces[
                     (this.PieceSelect.LocationX - 1), this.PieceSelect.LocationY
                 ].StatusPiece = Enum.StatusPiece.Livre;
-            } else
+            }
+            else
             {
                 this.Board.Pieces[
                     (this.PieceSelect.LocationX + 1), this.PieceSelect.LocationY

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="RestaUm.View.FinishGame">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand"
+                     VerticalOptions="CenterAndExpand">
+            <Label Text="Fim de jogo" HorizontalOptions="CenterAndExpand" FontSize="26" />
+            <FlexLayout AlignItems="Center" JustifyContent="Center" AlignContent="Center" HorizontalOptions="FillAndExpand">
+                <StackLayout HorizontalOptions="FillAndExpand"
+                             Margin="10, 10">
+                    <Label FontSize="18" Text="Jogadas"
+                           HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center"/>
+                    <Label FontSize="24" Text="{Binding NumPlays}"
+                           HorizontalOptions="CenterAndExpand"/>
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand"
+                             Margin="10, 10">
+                    <Label FontSize="18" Text="Peças"
+                           HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center"/>
+                    <Label FontSize="24" Text="{Binding NumPieces}"
+                           HorizontalOptions="CenterAndExpand"/>
+                </StackLayout>
+            </FlexLayout>
+            <StackLayout HorizontalOptions="CenterAndExpand" Margin="10, 10">
+                <Label Text="{Binding Msg}" FontSize="Large" Margin="20, 20"/>
+            </StackLayout>
+            <StackLayout HorizontalOptions="FillAndExpand" Margin="10, 10">
+                <Button HorizontalOptions="FillAndExpand" BorderColor="Black" Command="{Binding commandToHome}"
+                        BackgroundColor="Black" TextColor="White" 
+                        Text="Voltar ao Início."/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -7,10 +7,29 @@
             BackgroundColor="White"
             >
             <StackLayout
-                HorizontalOptions="FillAndExpand"
-                VerticalOptions="FillAndExpand"
+                HorizontalOptions="StartAndExpand"
+                VerticalOptions="Center"
+                Padding="10,10,10,0"
+                BackgroundColor="White"
                 >
-                <Grid x:Name="_GridBoard"/>
+                <Button Text="Inicio" Command="{Binding CommandReturnHome}"/>
+            </StackLayout>
+            <AbsoluteLayout>
+                <StackLayout 
+                    AbsoluteLayout.LayoutBounds="0, 0, 100, 100"
+                             Margin="10, 10">
+                    <Label FontSize="16" Text="Rodadas"
+                           HorizontalOptions="CenterAndExpand"/>
+                    <Label FontSize="24" Text="{Binding Round}"
+                           HorizontalOptions="CenterAndExpand"/>
+                </StackLayout>
+                <Grid AbsoluteLayout.LayoutBounds="0, 0,1,400"
+                      AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional" x:Name="_GridBoard"/>
+            </AbsoluteLayout>
+            <StackLayout
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="CenterAndExpand"
+                >
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

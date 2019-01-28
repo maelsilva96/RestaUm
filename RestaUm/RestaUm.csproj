@@ -17,11 +17,11 @@
     <Folder Include="View\" />
     <Folder Include="ViewModel\" />
     <Folder Include="Stock\" />
-    <Folder Include="Business\" />
     <Folder Include="Enum\" />
     <Folder Include="Ultil\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="MainPage.xaml.cs" />
+    <Compile Remove="Business\BoardBusiness.cs" />
   </ItemGroup>
 </Project>

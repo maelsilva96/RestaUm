@@ -15,7 +15,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
     <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
     <NuGetPackageImportStamp>
@@ -95,6 +94,24 @@
     <AndroidResource Include="Resources\mipmap-xhdpi\ball_golf.png" />
     <AndroidResource Include="Resources\mipmap-xxhdpi\ball_golf.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ball_golf.png" />
+    <AndroidResource Include="Resources\mipmap-ldpi\Icon.png" />
+    <AndroidResource Include="Resources\mipmap-ldpi\ball_golf.png" />
+    <AndroidResource Include="Resources\mipmap-ldpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ball.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ball.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ball.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ball.png" />
+    <AndroidResource Include="Resources\drawable\ball.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ball_golf.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ball_golf.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ball_golf.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ball_golf.png" />
+    <AndroidResource Include="Resources\drawable\ball_golf.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

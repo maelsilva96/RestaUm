@@ -1,13 +1,14 @@
 ﻿using System;
 using System.ComponentModel;
 using Xamarin.Forms;
-using RestaUm.Business;
+using RestaUm.Model;
 
 namespace RestaUm.ViewModel
 {
     public class HomeViewModel : INotifyPropertyChanged
     {
         public Command StartGame { get; set; }
+
         public HomeViewModel()
         {
             this.StartGame = new Command(StartNewGame);
@@ -15,8 +16,9 @@ namespace RestaUm.ViewModel
 
         private void StartNewGame() 
         {
-            Stock.StockContext.Board = (new BoardBusiness(new Model.Board())).CreateNew();
-            App.Current.MainPage = new View.Board();
+            Stock.StockContext.Round = 0;
+            Stock.StockContext.Board = (new Board()).CreateNewSolitaireBoard();
+            Application.Current.MainPage = new View.Board();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
